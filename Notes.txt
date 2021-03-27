@@ -1,0 +1,35 @@
+Windows + R
+Saber versoes ou se esta instalado o que é preciso na máquina, neste caso o java
+java --version (versao do java)
+javac --version (versao do compilador)
+_________________________________________________
+
+Configuração do ambiente JAVA
+
+JDK - java kit desenvolvimento ***javac***
+JRE - Java "executor"          ***java***
+
+Para verificar se a maquia tem java, executar no terminal(cmd):
+
+java --version (versao do java)
+   java 15.0.1 2020-10-20
+   Java(TM) SE Runtime Environment (build 15.0.1+9-18)
+   Java HotSpot(TM) 64-Bit Server VM (build 15.0.1+9-18, mixed mode, sharing)
+
+javac --version (versao do compilador)
+   javac 15.0.1
+
+Se executou os comandos e nao retornou nada, necessario baixar o JDK e JRE
+
+java jdk - site da oracle - https://www.oracle.com/br/java/technologies/javase-jdk15-downloads.html
+java openjdk - https://openjdk.java.net/install/
+_________________________________________________
+
+Depois da instalação ter sido feita com sucesso, necessário configurar VARIAVEIS DE AMBIENTE
+
+JAVA_HOME
+para win 10
+https://atutoriais.com/windows/como-configurar-o-java_home-no-windows-10/
+
+
+
