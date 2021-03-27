@@ -56,7 +56,4 @@ public class Desafios {
 		leitor.close();
 	}
 
-	public static void asd() {
-		
-	}
 }
