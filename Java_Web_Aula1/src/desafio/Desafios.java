@@ -9,25 +9,32 @@ public class Desafios {
 	
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
-		//contaArea(2.00);
-		produtoSimples();
+		
+		//contaArea();
+		//produtoSimples();
+		bemVindo();
 	}
 	
-	public static void contaArea(double raio) {
+	public static void contaArea() {
 		//area = pi * raio²
 		// pi = 3.14159
+		Locale.setDefault(Locale.US);
 		
-		double area;
+		double area, raio;
+		
+		System.out.println("Digite o valor do raio: ");
+		raio = leitor.nextDouble();
 		
 		area = 3.14159 * (raio * raio);
 		
 		System.out.printf("A = %.4f %n",  (area));
 		
+		leitor.close();
 	}
 	
 	public static void produtoSimples() {
 		//leia dois numero inteiros
-		
+
 		int valor1, valor2, PROD;
 		
 		System.out.print("Digite valor 1: ");
@@ -39,8 +46,16 @@ public class Desafios {
 		
 		System.out.print("PROD = " + PROD);
 			
+		leitor.close();
 	}
 	
+	public static void bemVindo() {
+		System.out.println("Digite alguma mensagem.");
+		String hello = leitor.nextLine();
+		System.out.println(hello);
+		leitor.close();
+	}
+
 	public static void asd() {
 		
 	}
