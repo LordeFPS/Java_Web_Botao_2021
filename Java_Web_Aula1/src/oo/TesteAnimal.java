@@ -3,13 +3,8 @@ package oo;
 public class TesteAnimal {
 
 	public static void main(String[] args) {
-		Animal n1 = new Animal();
-		
-		n1.setNome("spike");
-		n1.setEspecie("cachorro");
-		n1.setIdade(0);
-		
-		
+		// metodo construtor, o new ele inicializa o nosso objeto
+		Cachorro n1 = new Cachorro("spike","cachorro");
 		
 		System.out.println("O nome do animal e " + n1.getNome() + 
 						   " e pertence a especie " + n1.getEspecie()+
@@ -20,8 +15,11 @@ public class TesteAnimal {
 			System.out.println("Animal filhote.");
 		}
 		n1.emitirSom();
-		Animal n2 = new Animal("Churras", "Xauxau", 2);
 		
+		// metodo construtor, o new ele inicializa o nosso objeto
+		Cachorro n2 = new Cachorro("Churras", "Xauxau", 2);
+		
+		// tudo que for obrigatório na classe é preciso colocar no constutor
 		System.out.println("O nome do animal e " + n2.getNome() + 
 				   		   " e pertence a especie " + n2.getEspecie() +
 				   		   " e tem idade de " + n2.getIdade());

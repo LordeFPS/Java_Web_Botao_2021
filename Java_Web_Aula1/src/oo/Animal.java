@@ -1,6 +1,6 @@
 package oo;
 
-public class Animal {
+public abstract class Animal {
 	private String nome;
 	private String especie;
 	private int idade;
@@ -9,19 +9,16 @@ public class Animal {
 		
 	}
 	
+	public Animal(String nome, String especie) {
+		this(nome, especie, 0);
+	}
+	
+	
 	public Animal(String nome, String especie, int idade) {
 		super();
 		this.nome = nome;
 		this.especie = especie;
 		this.idade = idade;
-	}
-	
-	public void emitirSom() {
-		System.out.println("Som do animal");
-	}
-	
-	public boolean isAdulto() {
-		return idade >= 1;
 	}
 	
 	public String getNome() {
@@ -43,5 +40,12 @@ public class Animal {
 		this.idade = idade;
 	}
 	
+	public void emitirSom() {
+		System.out.println("Som do animal");
+	}
+	
+	public boolean isAdulto() {
+		return idade >= 1;
+	}
 	
 }
