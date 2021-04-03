@@ -31,4 +31,10 @@ public class Cachorro extends Animal {
 	public boolean verificaVivoMorto() {
 		return true;
 	}
+
+	@Override
+	public void morrer() {
+		
+		verificaVivoMorto = false;
+	}
 }

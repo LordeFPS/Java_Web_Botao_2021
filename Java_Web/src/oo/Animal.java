@@ -50,15 +50,13 @@ public abstract class Animal {
 		return verificaVivoMorto;
 	}
 
-	public void setVerificaVivoMorto(boolean verificaVivoMorto) {
-		this.verificaVivoMorto = verificaVivoMorto;
-	}
-
 	public abstract void emitirSom();
 	
 	public abstract boolean isAdulto();
 	
 	public abstract boolean verificaVivoMorto();
+	
+	public abstract void morrer();
 	
 	
 }
