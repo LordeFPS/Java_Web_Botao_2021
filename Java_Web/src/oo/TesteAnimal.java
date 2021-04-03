@@ -27,8 +27,8 @@ public class TesteAnimal {
 		//n2.isAdulto();
 		//System.out.println("\n");
 		n2.emitirSom();
-		//n2.morrer();
-		if (n2.getVerificaVivoMorto()) {
+		n2.morrer();
+		if (n2.isVerificaVivoMorto()) {
 			if (n2.isAdulto()) {
 				System.out.println(n2.getEspecie() + " adulto.");
 			}else {
@@ -43,7 +43,7 @@ public class TesteAnimal {
 		
 		// Cadastrando um gato Aula 2 
 		Gato gt1 = new Gato("Lorde");
-		gt1.setIdade(3);
+		gt1.setIdade(2);
 		System.out.printf("Nome: %s\n"
 						+ "Especie: %s\n"
 						+ "Idade: %d anos\n" , gt1.getNome(),gt1.getEspecie(),gt1.getIdade());
@@ -51,8 +51,8 @@ public class TesteAnimal {
 		//gt1.isAdulto();
 		//System.out.println("\n");
 		gt1.emitirSom();
-		gt1.morrer();
-		if (gt1.getVerificaVivoMorto()) {
+		//gt1.morrer();
+		if (gt1.isVerificaVivoMorto()) {
 			if (gt1.isAdulto()) {
 				System.out.println(gt1.getEspecie() + " adulto.");
 			}else {
@@ -62,7 +62,6 @@ public class TesteAnimal {
 			System.out.println(gt1.getEspecie() + " morto.");
 		}
 		gt1.emitirSom();
-		
 		
 	}
 }

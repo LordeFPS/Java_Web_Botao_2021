@@ -23,8 +23,10 @@ public class Cachorro extends Animal {
 
 	@Override
 	public boolean isAdulto() {
-		return idade >= 5;
-		
+		if (verificaVivoMorto) {
+			return idade >= 5;
+		}
+		return false;
 	}
 
 	@Override
@@ -33,8 +35,7 @@ public class Cachorro extends Animal {
 	}
 
 	@Override
-	public void morrer() {
-		
+	public final void morrer() {
 		verificaVivoMorto = false;
 	}
 }

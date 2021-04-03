@@ -22,7 +22,10 @@ public class Gato extends Animal{
 
 	@Override
 	public boolean isAdulto() {
-		return idade > 2;
+		if (verificaVivoMorto) {
+			return idade > 2;
+		}
+		return false;
 	}
 
 	@Override
@@ -31,7 +34,7 @@ public class Gato extends Animal{
 	}
 
 	@Override
-	public void morrer() {
+	public final void morrer() {
 		verificaVivoMorto = false;
 	}
 	

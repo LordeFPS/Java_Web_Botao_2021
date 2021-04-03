@@ -45,10 +45,6 @@ public abstract class Animal {
 	public boolean isVerificaVivoMorto() {
 		return verificaVivoMorto;
 	}
-	
-	public boolean getVerificaVivoMorto() {
-		return verificaVivoMorto;
-	}
 
 	public abstract void emitirSom();
 	
