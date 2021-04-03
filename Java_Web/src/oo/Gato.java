@@ -19,6 +19,6 @@ public class Gato extends Animal{
 
 	@Override
 	public boolean isAdulto() {
-		return getIdade() > 2;
+		return idade > 2;
 	}
 }

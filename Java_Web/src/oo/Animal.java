@@ -3,7 +3,9 @@ package oo;
 public abstract class Animal {
 	private String nome;
 	private String especie;
-	private int idade;
+	protected void name() {
+		
+	} int idade;
 	
 	public Animal() {
 		
