@@ -1,7 +1,7 @@
 package oo;
 
 // Criando Classe Gato Aula 2
-public class Gato extends Animal{
+public class Gato extends Animal implements IAnimal{
 
 	public Gato(String nome) {
 		super(nome, "Gato");

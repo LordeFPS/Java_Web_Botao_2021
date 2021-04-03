@@ -1,6 +1,6 @@
 package oo;
 
-public class Cachorro extends Animal {
+public class Cachorro extends Animal implements IAnimal{
 	
 	public Cachorro(String nome) {
 		super(nome, "Cachorro");

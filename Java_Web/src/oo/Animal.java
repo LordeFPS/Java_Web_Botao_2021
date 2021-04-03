@@ -46,13 +46,7 @@ public abstract class Animal {
 		return verificaVivoMorto;
 	}
 
-	public abstract void emitirSom();
 	
-	public abstract boolean isAdulto();
-	
-	public abstract boolean verificaVivoMorto();
-	
-	public abstract void morrer();
 	
 	
 }
