@@ -12,13 +12,23 @@ public class Cachorro extends Animal {
 
 	@Override
 	public void emitirSom() {
-		System.out.println("Som: Au Au");
 		
+		if (verificaVivoMorto) {
+			System.out.println("Som: Au Au");
+		}else {
+			System.out.println("Som: Nao emite som morto");
+		}
+				
 	}
 
 	@Override
 	public boolean isAdulto() {
 		return idade >= 5;
 		
+	}
+
+	@Override
+	public boolean verificaVivoMorto() {
+		return true;
 	}
 }

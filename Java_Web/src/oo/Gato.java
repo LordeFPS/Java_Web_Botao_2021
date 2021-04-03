@@ -13,12 +13,20 @@ public class Gato extends Animal{
 
 	@Override
 	public void emitirSom() {
-		System.out.println("Som: Miau Miau");
-		
+		if (verificaVivoMorto) {
+			System.out.println("Som: Miau Miau");
+		}else {
+			System.out.println("Som: Nao emite som morto");
+		}
 	}
 
 	@Override
 	public boolean isAdulto() {
 		return idade > 2;
+	}
+
+	@Override
+	public boolean verificaVivoMorto() {
+		return true;
 	}
 }

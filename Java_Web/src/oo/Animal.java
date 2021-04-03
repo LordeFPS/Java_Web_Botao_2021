@@ -3,9 +3,8 @@ package oo;
 public abstract class Animal {
 	private String nome;
 	private String especie;
-	protected void name() {
-		
-	} int idade;
+	protected int idade;
+	protected boolean verificaVivoMorto;
 	
 	public Animal() {
 		
@@ -21,6 +20,7 @@ public abstract class Animal {
 		this.nome = nome;
 		this.especie = especie;
 		this.idade = idade;
+		this.verificaVivoMorto = true;
 	}
 	
 	public String getNome() {
@@ -42,8 +42,23 @@ public abstract class Animal {
 		this.idade = idade;
 	}
 	
+	public boolean isVerificaVivoMorto() {
+		return verificaVivoMorto;
+	}
+	
+	public boolean getVerificaVivoMorto() {
+		return verificaVivoMorto;
+	}
+
+	public void setVerificaVivoMorto(boolean verificaVivoMorto) {
+		this.verificaVivoMorto = verificaVivoMorto;
+	}
+
 	public abstract void emitirSom();
 	
 	public abstract boolean isAdulto();
+	
+	public abstract boolean verificaVivoMorto();
+	
 	
 }

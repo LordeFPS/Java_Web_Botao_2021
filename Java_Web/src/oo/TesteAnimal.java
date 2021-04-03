@@ -36,18 +36,26 @@ public class TesteAnimal {
 		
 		// Cadastrando um gato Aula 2 
 		Gato gt1 = new Gato("Lorde");
-		gt1.setIdade(2);
+		gt1.setIdade(3);
 		System.out.printf("Nome: %s\n"
 						+ "Especie: %s\n"
 						+ "Idade: %d anos\n" , gt1.getNome(),gt1.getEspecie(),gt1.getIdade());
-		gt1.emitirSom();
+		
 		//gt1.isAdulto();
 		//System.out.println("\n");
-		if (gt1.isAdulto()) {
-			System.out.println(gt1.getEspecie() + " adulto.\n");
+		gt1.emitirSom();
+		gt1.setVerificaVivoMorto(false);
+		if (gt1.getVerificaVivoMorto()) {
+			if (gt1.isAdulto()) {
+				System.out.println(gt1.getEspecie() + " adulto.");
+			}else {
+				System.out.println(gt1.getEspecie() + " filhote.");
+			}
 		}else {
-			System.out.println(gt1.getEspecie() + " filhote.\n");
+			System.out.println(gt1.getEspecie() + " morto.");
 		}
-
+		gt1.emitirSom();
+		
+		
 	}
 }
