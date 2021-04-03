@@ -4,7 +4,7 @@ public class TesteAnimal {
 
 	public static void main(String[] args) {
 		// metodo construtor, o new ele inicializa o nosso objeto
-		Cachorro n1 = new Cachorro("spike","cachorro");
+		Cachorro n1 = new Cachorro("spike");
 		
 		System.out.println("O nome do animal e " + n1.getNome() + 
 						   " e pertence a especie " + n1.getEspecie()+
@@ -29,6 +29,15 @@ public class TesteAnimal {
 			System.out.println("Animal filhote.");
 		}
 		n2.emitirSom();
+		
+		// Cadastrando um gato
+		
+		Gato gt1 = new Gato("Lorde");
+		System.out.println("O nome do animal e " + gt1.getNome() + 
+				   " e pertence a especie " + gt1.getEspecie()+
+				   " e tem idade de " + gt1.getIdade());
+		
+		
 
 	}
 }
