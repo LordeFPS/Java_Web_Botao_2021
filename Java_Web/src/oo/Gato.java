@@ -10,4 +10,15 @@ public class Gato extends Animal{
 	public Gato(String nome, String especie, int idade) {
 		super(nome, especie, idade);
 	}
+
+	@Override
+	public void emitirSom() {
+		System.out.println("Som: Miau Miau");
+		
+	}
+
+	@Override
+	public boolean isAdulto() {
+		return getIdade() > 2;
+	}
 }
