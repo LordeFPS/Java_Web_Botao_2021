@@ -1,0 +1,14 @@
+Crir um projeto que simula uma empresa
+
+Requisitos:
+	- Ter uma classe abstrata com propriedades FUNCIONARIOS
+		cargo | salario | nome | identificador unico | promocao
+	
+	- Ter uma interface com os metodos para aumento salario
+
+	* Cargos utilizados
+		- Impressor | ajudante | recepcao
+
+Quando o impressor ganhar promocao ele tem que somar 25% do salario
+Quando o ajudante ganhar promocao ele tem que somar 5% do salario
+Quando o ajudante ganhar promocao ele tem que somar 10% do salario
