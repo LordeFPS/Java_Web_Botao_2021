@@ -1,0 +1,9 @@
+MySQL Product Archives - conector do banco(ver versao do MySQL)
+Site: https://downloads.mysql.com/archives/c-j/
+
+Product Version: 8.0.22
+Operating System: Platform Independent
+
+Downloand zip
+_____________________________________________________________
+
