@@ -31,3 +31,20 @@ truncate contato;
 /*Adicionar uma coluna de data com o valor de data padrao(datetime)*/
 alter table contato 
 add column data_cadastro datetime default now();
+--___________________________________________________
+-- CRUD
+-- CREAT
+insert into contato (nome, fone, email, observacao)
+values ('','','','');
+
+-- READ
+select * from contato;
+
+-- UPDATE
+update contato
+set nome = ''
+where id = '';
+
+-- DELETE
+delete from contato
+where id = '';
