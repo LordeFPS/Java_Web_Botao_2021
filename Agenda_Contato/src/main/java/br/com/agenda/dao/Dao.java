@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Dao {
-	
 	// Drive que conecta com o banco
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	
@@ -31,8 +30,8 @@ public class Dao {
 			return null;
 		}
 	}
-	
-	public void testaconexao() {
+
+	public void testaConexao() {
 		try {
 			Connection connection = conectar();
 			System.out.println("Conexao bem sucedida " + connection);
