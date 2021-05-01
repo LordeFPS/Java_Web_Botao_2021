@@ -56,9 +56,23 @@ public class ContatoDao implements BaseDao<Contato, Long>{
         }
 	}
 
-	public Contato findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Contato findById(Long id) throws SQLException{
+
+		Contato c = null;
+        statement = "SELECT nome, fone, email, observacao FROM contato WHERE id = ?";
+
+        try (PreparedStatement preparedStatement = this.conexao.getConnection().prepareStatement(statement);
+             ResultSet rs = preparedStatement.executeQuery();
+        ) {
+            preparedStatement.setLong(1, id);
+            while (rs.next()) {
+                c = new Contato(rs.getString("nome"), rs.getString("fone"), rs.getString("email"));
+                c.setObservacao(rs.getString("observacao"));
+            }
+            return c;
+        } catch (SQLException e) {
+            throw e;
+        }
 	}
 
 	public void update(Contato entity) {

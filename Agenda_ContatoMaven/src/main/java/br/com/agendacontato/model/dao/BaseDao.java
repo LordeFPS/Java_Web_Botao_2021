@@ -13,7 +13,7 @@ public interface BaseDao<T, ID> {
 
     List<T> findAll() throws SQLException;
 
-    T findById(ID id);
+    T findById(ID id) throws SQLException;
 
     void update(T entity);
 
