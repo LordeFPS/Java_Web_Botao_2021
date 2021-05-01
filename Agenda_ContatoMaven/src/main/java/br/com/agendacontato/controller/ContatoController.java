@@ -37,16 +37,16 @@ public class ContatoController extends HttpServlet {
     }
 
     protected void listaContatos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	List<Contato> contatoList = new ArrayList<>();
-
-        try {
-            contatoList = contatoDao.findAll();
+    	try {
+            contatoDao = new ContatoDao();
+            List<Contato> contatoList = contatoDao.findAll();
             request.setAttribute("contatos", contatoList);
             RequestDispatcher dispatcher = request.getRequestDispatcher("agenda.jsp");
             dispatcher.forward(request, response);
-        } catch (SQLException exception) {
+        } catch (SQLException | ClassNotFoundException exception) {
             Logger.getLogger(ContatoController.class.getName()).log(Level.SEVERE, null, exception);
         }
+
         response.sendRedirect("agenda.jsp");
     }
 
