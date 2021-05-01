@@ -2,40 +2,62 @@ package br.com.agendacontato.infra;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class ConexaoMysql {
-	
-	//Driver de conexao om o banco
+public class ConexaoMysql implements ConexaoJdbc{
+
+	private Connection connection = null;
+
+    //Driver de conexao om o banco
     private String driver = "com.mysql.cj.jdbc.Driver";
     // caminho onde o banco esta fisicamente
     private static final String DATABASE_URL =
-            "jdbc:mysql://127.0.0.1:3306/agenda?useTimezone=true&serverTimezone=UTC";
+            "jdbc:mysql://172.17.0.2:3306/agenda?useTimezone=true&serverTimezone=UTC";
 
     // usuario do banco
     private static final String USERNAME = "root";
     // senha do banco
-    private static final String PASSWORD ="";
+    private static final String PASSWORD = "";
 
-    private Connection conectar() {
-        Connection connection = null;
-        try {
-            Class.forName(driver);
-            connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
-            return connection;
-        } catch (Exception e) {
-            System.out.println(e);
-            return null;
+    public ConexaoMysql() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        this.connection = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
+        this.connection.setAutoCommit(false);
+    }
+
+    
+    public Connection getConnection() {
+        return this.connection;
+    }
+
+    
+    public void close() {
+        if (this.connection != null) {
+            try {
+                this.connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexaoMysql.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
-    public void testaConexao() {
-        try {
-            Connection connection = conectar();
-            System.out.println("Conectado com sucesso ->" + connection);
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
+    public void commit() throws SQLException {
+        this.connection.commit();
+        this.close();
+    }
+
+    
+    public void rollback() {
+        if (this.connection != null) {
+            try {
+                this.connection.rollback();
+            } catch (SQLException ex) {
+                Logger.getLogger(ConexaoMysql.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                this.close();
+            }
         }
     }
-	
 }
