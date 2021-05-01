@@ -1,5 +1,58 @@
 package br.com.agendacontato.model.dao;
 
-public class ContatoDao {
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.agendacontato.infra.ConexaoJdbc;
+import br.com.agendacontato.infra.ConexaoMysql;
+import br.com.agendacontato.model.entity.Contato;
+
+public class ContatoDao implements BaseDao<Contato, Long>{
+	
+	private final ConexaoJdbc conexao;
+    private String statement;
+
+    public ContatoDao() throws SQLException, ClassNotFoundException {
+        this.conexao = new ConexaoMysql();
+    }
+	
+	public void create(Contato entity) throws SQLException {
+		statement = "INSERT INTO contato(nome, fone, email, observacao) values(?, ?, ?, ?)";
+
+        try (PreparedStatement preparedStatement = this.conexao.getConnection().prepareStatement(statement)) {
+            preparedStatement.setString(1, contato.getNome());
+            preparedStatement.setString(2, contato.getFone());
+            preparedStatement.setString(3, contato.getEmail());
+            preparedStatement.setString(4, contato.getObservacao());
+
+            preparedStatement.execute();
+            this.conexao.commit();
+        } catch (SQLException e) {
+            this.conexao.rollback();
+            throw e;
+        }
+		
+	}
+
+	public List<Contato> findAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Contato findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void update(Contato entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
